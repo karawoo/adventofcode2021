@@ -76,7 +76,7 @@
 #' @export
 #' @examples
 #' f03a(example_data_03())
-#' f03b()
+#' f03b(example_data_03())
 f03a <- function(x) {
   gamma <- strtoi(
     paste0(apply(x, MARGIN = 2, most_common), collapse = ""),
@@ -116,12 +116,12 @@ f03b <- function(x) {
 
 most_common <- function(x) {
   x <- table(x)
-  as.numeric(names(tail(x[which(x == max(x))], 1)))
+  as.numeric(names(utils::tail(x[which(x == max(x))], 1)))
 }
 
 least_common <- function(x) {
   x <- table(x)
-  as.numeric(names(head(x[which(x == min(x))], 1)))
+  as.numeric(names(utils::head(x[which(x == min(x))], 1)))
 }
 
 #' @param example Which example data to use (by position or name). Defaults to
@@ -129,7 +129,7 @@ least_common <- function(x) {
 #' @rdname day03
 #' @export
 example_data_03 <- function(example = 1) {
-  read.fwf(
+  utils::read.fwf(
     system.file("input03.txt", package = "adventofcode2021"),
     widths = rep(1, 12)
   )
