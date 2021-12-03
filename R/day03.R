@@ -92,15 +92,36 @@ f03a <- function(x) {
 #' @rdname day03
 #' @export
 f03b <- function(x) {
+  oxygen <- x
+  co2 <- x
 
+  i <- 1
+  while(nrow(oxygen) > 1) {
+    val <- most_common(oxygen[, i])
+    oxygen <- oxygen[oxygen[, i] == val, ]
+    i <- i + 1
+  }
+
+  i <- 1
+  while(nrow(co2) > 1) {
+    val <- least_common(co2[, i])
+    co2 <- co2[co2[, i] == val, ]
+    i <- i + 1
+  }
+
+  oxygen <- strtoi(paste0(oxygen, collapse = ""), base = 2)
+  co2 <- strtoi(paste0(co2, collapse = ""), base = 2)
+  oxygen * co2
 }
 
 most_common <- function(x) {
-  as.numeric(names(which.max(table(x))))
+  x <- table(x)
+  as.numeric(names(tail(x[which(x == max(x))], 1)))
 }
 
 least_common <- function(x) {
-  as.numeric(names(which.min(table(x))))
+  x <- table(x)
+  as.numeric(names(head(x[which(x == min(x))], 1)))
 }
 
 #' @param example Which example data to use (by position or name). Defaults to
