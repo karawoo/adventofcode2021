@@ -4,14 +4,22 @@
 \alias{day04}
 \alias{f04a}
 \alias{f04b}
+\alias{get_numbers}
+\alias{get_cards}
 \title{Day 04: Giant Squid}
 \usage{
 f04a(numbers, cards)
 
 f04b(numbers, cards)
+
+get_numbers()
+
+get_cards()
 }
 \arguments{
-\item{x}{some data}
+\item{numbers}{Numbers called so far}
+
+\item{cards}{List of bingo cards}
 }
 \value{
 For Part One, \code{f04a(x)} returns .... For Part Two,

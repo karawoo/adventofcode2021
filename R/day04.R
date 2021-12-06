@@ -94,7 +94,8 @@
 #'
 #' *(Try using `convert_clipboard_html_to_roxygen_md()`)*
 #'
-#' @param x some data
+#' @param numbers Numbers called so far
+#' @param cards List of bingo cards
 #' @return For Part One, `f04a(x)` returns .... For Part Two,
 #'   `f04b(x)` returns ....
 #' @export
@@ -134,6 +135,8 @@ score <- function(card, numbers) {
   sum(card[!res]) * tail(numbers, 1)
 }
 
+#' @rdname day04
+#' @export
 get_numbers <- function() {
   as.numeric(
     strsplit(
@@ -143,6 +146,8 @@ get_numbers <- function() {
   )
 }
 
+#' @rdname day04
+#' @export
 get_cards <- function() {
   cards_df <- read.table(
     system.file("input04.txt", package = "adventofcode2021"),
