@@ -94,3 +94,57 @@ f02b <- function(x) {
 example_data_02 <- function(example = 1) {
   readLines(system.file("input02.txt", package = "adventofcode2021"))
 }
+
+# R6 solution ------------------------------------------------------------------
+
+#' Model the position of a submarine
+#'
+#' @field position horizontal position
+#' @field depth vertical depth
+#'
+#' @export
+#' @examples
+#' dat <- "forward 5
+#' down 5
+#' forward 8
+#' up 3
+#' down 8
+#' forward 2"
+#' x <- strsplit(dat, "\n")[[1]]
+#' s <- Submarine$new()
+#' s$move(x)
+Submarine <- R6::R6Class("Submarine", list(
+  position = 0,
+  depth = 0,
+
+  #' @description Move forward
+  #' @param x forward distance to add
+  forward = function(x = 1) {
+    self$position <- self$position + x
+    invisible(self)
+  },
+
+  #' @description Move down
+  #' @param x depth to add
+  down = function(x = 1) {
+    self$depth <- self$depth + x
+    invisible(self)
+  },
+
+  #' @description Move up
+  #' @param x depth to subtraxt
+  up = function(x = 1) {
+    self$depth <- self$depth - x
+    invisible(self)
+  },
+
+  #' @description Move based on a set of commands
+  #' @param commands vector of commands such as "forward 1", "down 2"
+  move = function(commands) {
+    purrr::walk(commands, function(x) {
+      fn <- strsplit(x, " ")[[1]]
+      do.call(self[[fn[[1]]]], list(as.numeric(fn[[2]])))
+    })
+    return(self$position * self$depth)
+  }
+))
