@@ -84,23 +84,27 @@ f05 <- function(x, include_diag = FALSE) {
   segments <- tibble(x) %>%
     separate(x, into = c("start", "end"), sep = " -> ") %>%
     rownames_to_column(var = "segment") %>%
-    pivot_longer(c(start, end)) %>%
-    separate(value, into = c("x", "y"), sep = ",") %>%
-    group_by(segment)
+    pivot_longer(c(.data$start, .data$end)) %>%
+    separate(.data$value, into = c("x", "y"), sep = ",") %>%
+    group_by(.data$segment)
 
   if (!include_diag) {
     segments <- filter(
       segments,
-      duplicated(x)
-      | duplicated(x, fromLast = TRUE)
-      | duplicated(y)
-      | duplicated(y, fromLast = TRUE)
+      duplicated(.data$x)
+      | duplicated(.data$x, fromLast = TRUE)
+      | duplicated(.data$y)
+      | duplicated(.data$y, fromLast = TRUE)
     )
   }
 
-  summarize(segments, x = list(x[1]:x[2]), y = list(y[1]:y[2])) %>%
-    unnest(c(x, y)) %>%
-    count(x, y) %>%
+  summarize(
+    segments,
+    x = list(.data$x[1]:.data$x[2]),
+    y = list(.data$y[1]:.data$y[2])
+  ) %>%
+    unnest(c(.data$x, .data$y)) %>%
+    count(.data$x, .data$y) %>%
     filter(n > 1) %>%
     nrow()
 }
