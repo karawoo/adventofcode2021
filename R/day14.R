@@ -96,6 +96,8 @@
 #' *(Try using `convert_clipboard_html_to_roxygen_md()`)*
 #'
 #' @field template Starting template
+#' @field fun_call Function call to `switch()` to convert two-letter pairs
+#'   according to rules
 #' @export
 #' @examples
 #' \dontrun{

@@ -110,6 +110,9 @@ p$get_answer()
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
 \item{\code{template}}{Starting template}
+
+\item{\code{fun_call}}{Function call to \code{switch()} to convert two-letter pairs
+according to rules}
 }
 \if{html}{\out{</div>}}
 }
