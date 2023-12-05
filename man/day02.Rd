@@ -26,57 +26,6 @@ For Part One, \code{f02a(x)} returns .... For Part Two,
 \description{
 \href{https://adventofcode.com/2021/day/2}{Dive!}
 }
-\details{
-\strong{Part One}
-
-Now, you need to figure out how to [pilot this
-thing]{title="Tank, I need a pilot program for a B212 helicopter."}.
-
-It seems like the submarine can take a series of commands like
-\verb{forward 1}, \verb{down 2}, or \verb{up 3}:
-\itemize{
-\item \verb{forward X} increases the horizontal position by \code{X} units.
-\item \verb{down X} \emph{increases} the depth by \code{X} units.
-\item \verb{up X} \emph{decreases} the depth by \code{X} units.
-}
-
-Note that since you\'re on a submarine, \code{down} and \code{up} affect your
-\emph{depth}, and so they have the opposite result of what you might expect.
-
-The submarine seems to already have a planned course (your puzzle
-input). You should probably figure out where it\'s going. For example:\preformatted{forward 5
-down 5
-forward 8
-up 3
-down 8
-forward 2
-}
-
-Your horizontal position and depth both start at \code{0}. The steps above
-would then modify them as follows:
-\itemize{
-\item \verb{forward 5} adds \code{5} to your horizontal position, a total of \code{5}.
-\item \verb{down 5} adds \code{5} to your depth, resulting in a value of \code{5}.
-\item \verb{forward 8} adds \code{8} to your horizontal position, a total of \code{13}.
-\item \verb{up 3} decreases your depth by \code{3}, resulting in a value of \code{2}.
-\item \verb{down 8} adds \code{8} to your depth, resulting in a value of \code{10}.
-\item \verb{forward 2} adds \code{2} to your horizontal position, a total of \code{15}.
-}
-
-After following these instructions, you would have a horizontal position
-of \code{15} and a depth of \code{10}. (Multiplying these together produces
-\code{150}.)
-
-Calculate the horizontal position and depth you would have after
-following the planned course. \emph{What do you get if you multiply your
-final horizontal position by your final depth?}
-
-\strong{Part Two}
-
-\emph{(Use have to manually add this yourself.)}
-
-\emph{(Try using \code{convert_clipboard_html_to_roxygen_md()})}
-}
 \examples{
 f02a(example_data_02())
 f02b(example_data_02())

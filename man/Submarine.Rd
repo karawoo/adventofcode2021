@@ -31,16 +31,16 @@ s$move(x)
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-forward}{\code{Submarine$forward()}}
-\item \href{#method-down}{\code{Submarine$down()}}
-\item \href{#method-up}{\code{Submarine$up()}}
-\item \href{#method-move}{\code{Submarine$move()}}
-\item \href{#method-clone}{\code{Submarine$clone()}}
+\item \href{#method-Submarine-forward}{\code{Submarine$forward()}}
+\item \href{#method-Submarine-down}{\code{Submarine$down()}}
+\item \href{#method-Submarine-up}{\code{Submarine$up()}}
+\item \href{#method-Submarine-move}{\code{Submarine$move()}}
+\item \href{#method-Submarine-clone}{\code{Submarine$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-forward"></a>}}
-\if{latex}{\out{\hypertarget{method-forward}{}}}
+\if{html}{\out{<a id="method-Submarine-forward"></a>}}
+\if{latex}{\out{\hypertarget{method-Submarine-forward}{}}}
 \subsection{Method \code{forward()}}{
 Move forward
 \subsection{Usage}{
@@ -56,8 +56,8 @@ Move forward
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-down"></a>}}
-\if{latex}{\out{\hypertarget{method-down}{}}}
+\if{html}{\out{<a id="method-Submarine-down"></a>}}
+\if{latex}{\out{\hypertarget{method-Submarine-down}{}}}
 \subsection{Method \code{down()}}{
 Move down
 \subsection{Usage}{
@@ -73,8 +73,8 @@ Move down
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-up"></a>}}
-\if{latex}{\out{\hypertarget{method-up}{}}}
+\if{html}{\out{<a id="method-Submarine-up"></a>}}
+\if{latex}{\out{\hypertarget{method-Submarine-up}{}}}
 \subsection{Method \code{up()}}{
 Move up
 \subsection{Usage}{
@@ -90,8 +90,8 @@ Move up
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-move"></a>}}
-\if{latex}{\out{\hypertarget{method-move}{}}}
+\if{html}{\out{<a id="method-Submarine-move"></a>}}
+\if{latex}{\out{\hypertarget{method-Submarine-move}{}}}
 \subsection{Method \code{move()}}{
 Move based on a set of commands
 \subsection{Usage}{
@@ -107,8 +107,8 @@ Move based on a set of commands
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-Submarine-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Submarine-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

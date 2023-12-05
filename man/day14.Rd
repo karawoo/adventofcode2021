@@ -11,93 +11,6 @@ Day 14: Extended Polymerization
 }
 \details{
 \href{https://adventofcode.com/2021/day/14}{Extended Polymerization}
-
-\strong{Part One}
-
-The incredible pressures at this depth are starting to put a strain on
-your submarine. The submarine has
-\href{https://en.wikipedia.org/wiki/Polymerization}{polymerization} equipment
-that would produce suitable materials to reinforce the submarine, and
-the nearby volcanically-active caves should even have the necessary
-input elements in sufficient quantities.
-
-The submarine manual contains [instructions]{title="HO
-
-HO -> OH"} for finding the optimal polymer formula; specifically, it
-offers a \emph{polymer template} and a list of \emph{pair insertion} rules (your
-puzzle input). You just need to work out what polymer would result after
-repeating the pair insertion process a few times.
-
-For example:\preformatted{NNCB
-
-CH -> B
-HH -> N
-CB -> H
-NH -> C
-HB -> C
-HC -> B
-HN -> C
-NN -> C
-BH -> H
-NC -> B
-NB -> B
-BN -> B
-BB -> N
-BC -> B
-CC -> N
-CN -> C
-}
-
-The first line is the \emph{polymer template} - this is the starting point of
-the process.
-
-The following section defines the \emph{pair insertion} rules. A rule like
-\code{AB -> C} means that when elements \code{A} and \code{B} are immediately adjacent,
-element \code{C} should be inserted between them. These insertions all happen
-simultaneously.
-
-So, starting with the polymer template \code{NNCB}, the first step
-simultaneously considers all three pairs:
-\itemize{
-\item The first pair (\code{NN}) matches the rule \code{NN -> C}, so element \code{C} is
-inserted between the first \code{N} and the second \code{N}.
-\item The second pair (\code{NC}) matches the rule \code{NC -> B}, so element \code{B} is
-inserted between the \code{N} and the \code{C}.
-\item The third pair (\code{CB}) matches the rule \code{CB -> H}, so element \code{H} is
-inserted between the \code{C} and the \code{B}.
-}
-
-Note that these pairs overlap: the second element of one pair is the
-first element of the next pair. Also, because all pairs are considered
-simultaneously, inserted elements are not considered to be part of a
-pair until the next step.
-
-After the first step of this process, the polymer becomes \code{NCNBCHB}.
-
-Here are the results of a few steps using the above rules:\preformatted{Template:     NNCB
-After step 1: NCNBCHB
-After step 2: NBCCNBBBCBHCB
-After step 3: NBBBCNCCNBBNBNBBCHBHHBCHB
-After step 4: NBBNBNBBCCNBCNCCNBBNBBNBBBNBBNBBCBHCBHHNHCBBCBHCB
-}
-
-This polymer grows quickly. After step 5, it has length 97; After step
-10, it has length 3073. After step 10, \code{B} occurs 1749 times, \code{C} occurs
-298 times, \code{H} occurs 191 times, and \code{N} occurs 865 times; taking the
-quantity of the most common element (\code{B}, 1749) and subtracting the
-quantity of the least common element (\code{H}, 161) produces
-\code{1749 - 161 = 1588}.
-
-Apply 10 steps of pair insertion to the polymer template and find the
-most and least common elements in the result. \emph{What do you get if you
-take the quantity of the most common element and subtract the quantity
-of the least common element?}
-
-\strong{Part Two}
-
-\emph{(Use have to manually add this yourself.)}
-
-\emph{(Try using \code{convert_clipboard_html_to_roxygen_md()})}
 }
 \examples{
 \dontrun{
@@ -119,15 +32,15 @@ according to rules}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-step}{\code{Polymer$step()}}
-\item \href{#method-take_steps}{\code{Polymer$take_steps()}}
-\item \href{#method-get_answer}{\code{Polymer$get_answer()}}
-\item \href{#method-clone}{\code{Polymer$clone()}}
+\item \href{#method-Polymer-step}{\code{Polymer$step()}}
+\item \href{#method-Polymer-take_steps}{\code{Polymer$take_steps()}}
+\item \href{#method-Polymer-get_answer}{\code{Polymer$get_answer()}}
+\item \href{#method-Polymer-clone}{\code{Polymer$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-step"></a>}}
-\if{latex}{\out{\hypertarget{method-step}{}}}
+\if{html}{\out{<a id="method-Polymer-step"></a>}}
+\if{latex}{\out{\hypertarget{method-Polymer-step}{}}}
 \subsection{Method \code{step()}}{
 take one step
 \subsection{Usage}{
@@ -136,8 +49,8 @@ take one step
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-take_steps"></a>}}
-\if{latex}{\out{\hypertarget{method-take_steps}{}}}
+\if{html}{\out{<a id="method-Polymer-take_steps"></a>}}
+\if{latex}{\out{\hypertarget{method-Polymer-take_steps}{}}}
 \subsection{Method \code{take_steps()}}{
 take n steps
 \subsection{Usage}{
@@ -153,8 +66,8 @@ take n steps
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get_answer"></a>}}
-\if{latex}{\out{\hypertarget{method-get_answer}{}}}
+\if{html}{\out{<a id="method-Polymer-get_answer"></a>}}
+\if{latex}{\out{\hypertarget{method-Polymer-get_answer}{}}}
 \subsection{Method \code{get_answer()}}{
 Calculate count of most common letter minus least common letter
 \subsection{Usage}{
@@ -163,8 +76,8 @@ Calculate count of most common letter minus least common letter
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-Polymer-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Polymer-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{
