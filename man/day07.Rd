@@ -4,14 +4,11 @@
 \alias{day07}
 \alias{f07a}
 \alias{f07b}
-\alias{input_07}
 \title{Day 07: The Treachery of Whales}
 \usage{
 f07a(x)
 
 f07b(x)
-
-input_07()
 }
 \arguments{
 \item{x}{some data}
